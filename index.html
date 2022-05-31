@@ -62,17 +62,18 @@
   }
   function setWord(word, line) {
     for(var i=0; i < 5; i++) {
-    }
-    for(var i=0; i < 5; i++) {
-      if(word[i] === wordle[i]){
-        var toChange = document.getElementById('letter' + i + line)
-        toChange.innerHTML = word[i]
-        toChange.className = 'entered correct'
-      } else {
-        var toChange = document.getElementById('letter' + i + line)
-        toChange.innerHTML = word[i]
-        toChange.className = 'entered wrong'
+      for(var j = 0; j < 5; j++) {
+        if(wordle.includes(word)) {}
       }
+      // if(word[i] === wordle[i]){
+      //   var toChange = document.getElementById('letter' + i + line)
+      //   toChange.innerHTML = word[i]
+      //   toChange.className = 'entered correct'
+      // } else {
+      //   var toChange = document.getElementById('letter' + i + line)
+      //   toChange.innerHTML = word[i]
+      //   toChange.className = 'entered wrong'
+      // }
     }
   }
 </script>
