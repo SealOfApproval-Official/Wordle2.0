@@ -47,12 +47,15 @@
       }
     }
   }
+  var onLine = 0;
   function setWordFromForm() {
     var aWord = document.getElementById('inputWord')
-    changeWord(aWord, 0)
+    changeWord(aWord, onLine)
+    onLine++;
   }
   function Letter(letter) {
-    this.l = letter;
+    this.l = letter
+    this.amouunt = 0
   }
 </script>
 </body>
