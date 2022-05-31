@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="I made wordle. again."/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<title>Title</title>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script src="wordles.js"></script>
+<script>
+  //Wordlewords is the array of words
+  const wordle = wordlewords[Math.floor(Math.random() * wordlewords.length)];
+  function checkIfWord(word) {
+    return wordlewords.includes(word.toLowerCase())
+  }
+  document.write(wordle)
+  document.write('<center><div id=\'thecontent\'><h1 id = \'title\'class=\'display-2\'>Wordle 2.0</h1><div id=\'entered\' class=\'display-4\'></div></div></center>')
+  enteredStuff = document.getElementById('entered')
+  for(var i=0; i < 6; i++) {
+    enteredStuff.innerHTML += '<br>'
+    for(var j=0; j < 5; j++) {
+      enteredStuff.innerHTML += '<span class=\'entered unanswered\' id=letter' + j + i + '>_</span>'
+    }
+  }
+  document.write('<center><form onsubmit="return false; setWordFromForm();"><input type=\'text\' id=\'inputWord\' placeholder=\'5 Letter Word\' pattern="[A-Za-z]{5}"><input type="submit" value="Submit"></form></center>')
+  function setWord(word, line) {
+    for(var i=0; i < 5; i++) {
+    }
+    for(var i=0; i < 5; i++) {
+      if(word[i] === wordle[i]){
+        var toChange = document.getElementById('letter' + i + line)
+        toChange.innerHTML = word[i]
+        toChange.className = 'entered correct'
+      } else {
+        var toChange = document.getElementById('letter' + i + line)
+        toChange.innerHTML = word[i]
+        toChange.className = 'entered wrong'
+      }
+    }
+  }
+  function setWordFromForm() {
+    var aWord = document.getElementById('inputWord')
+    changeWord(aWord, 0)
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+  font-family: monospace;
+}
+#title {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.entered {
+  letter-spacing: 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  width: 10%;
+  padding-left: 13px;
+  border-color: rgb(255,255,255);
+  border: white solid 1px;
+}
+.unanswered {
+  background-color: rgb(200, 200, 200);
+  color: rgb(200,200,200);
+}
+.correct {
+  background-color: rgb(0, 174, 0);
+  color: black;
+}
+.there {
+  background-color: rgb(255, 227, 46);
+  color: black;
+}
+.wrong {
+  background-color: rgb(255, 0, 0);
+  color: black;
+}
