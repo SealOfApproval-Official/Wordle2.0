@@ -65,8 +65,8 @@
       for(var j = 0; j < 5; j++) {
         if(wordle.includes(word)) {
           lettersToUse(colName(word)).amount++
-          document.write(lettersToUse(colName(word)).amount)
-      }
+        }
+        document.write(lettersToUse(colName(word)).amount)
       // if(word[i] === wordle[i]){
       //   var toChange = document.getElementById('letter' + i + line)
       //   toChange.innerHTML = word[i]
@@ -78,7 +78,9 @@
       // }
     }
   }
+  document.write(lettersToUse(colName(word)).amount)
 }
+setWord('crane',0)
 </script>
 </body>
 </html>
